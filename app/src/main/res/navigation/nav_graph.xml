@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/menuFragment">
+
+    <fragment
+        android:id="@+id/descriptionFragment"
+        android:name="com.ands.wb5weekweb.fragments.heroes.DescriptionFragment"
+        android:label="fragment_description"
+        tools:layout="@layout/fragment_description" >
+        <argument
+            android:name="commonHeroesStats"
+            app:argType="com.ands.wb5weekweb.model.heroes.CommonHeroesStats" />
+    </fragment>
+    <fragment
+        android:id="@+id/heroesFragment"
+        android:name="com.ands.wb5weekweb.fragments.heroes.DotaHeroesFragment"
+        android:label="fragment_heroes"
+        tools:layout="@layout/fragment_heroes" >
+        <action
+            android:id="@+id/action_heroesFragment_to_descriptionFragment"
+            app:destination="@id/descriptionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.ands.wb5weekweb.fragments.MenuFragment"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu" >
+        <action
+            android:id="@+id/action_menuFragment_to_heroesFragment"
+            app:destination="@id/heroesFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_superHeroesFragment"
+            app:destination="@id/superHeroesFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_tinderFragment"
+            app:destination="@id/tinderFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tinderFragment"
+        android:name="com.ands.wb5weekweb.fragments.tinder.TinderFragment"
+        android:label="fragment_tinder"
+        tools:layout="@layout/fragment_tinder" >
+        <action
+            android:id="@+id/action_tinderFragment_to_likedCatsFragment"
+            app:destination="@id/likedCatsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/superHeroesFragment"
+        android:name="com.ands.wb5weekweb.fragments.heroes.SuperHeroesFragment"
+        android:label="fragment_super_heroes"
+        tools:layout="@layout/fragment_super_heroes" >
+        <action
+            android:id="@+id/action_superHeroesFragment_to_descriptionFragment"
+            app:destination="@id/descriptionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/likedCatsFragment"
+        android:name="com.ands.wb5weekweb.fragments.tinder.LikedCatsFragment"
+        android:label="fragment_favourite_cats"
+        tools:layout="@layout/fragment_favourite_cats" />
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.ands.wb5weekweb.fragments.AboutFragment"
+        android:label="fragment_about"
+        tools:layout="@layout/fragment_about" >
+        <action
+            android:id="@+id/action_aboutFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
+</navigation>

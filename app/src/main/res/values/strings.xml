@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">WB5WeekApiFinal</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="baseIntPlaceholder">Базовый интеллект героя: %1$s</string>
+    <string name="baseStrPlaceholder">Базовая сила героя: %1$s</string>
+    <string name="baseMovementSpeedPlaceholder">Базовая скорость передвижения героя: %1$s</string>
+    <string name="backBtn">back</string>
+    <string name="author">Sergey Strchan</string>
+    <string name="github">github.com/VoidMiner</string>
+</resources>
