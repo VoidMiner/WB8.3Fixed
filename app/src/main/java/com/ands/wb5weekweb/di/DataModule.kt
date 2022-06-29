@@ -3,9 +3,7 @@ package com.ands.wb5weekweb.di
 import android.content.Context
 import androidx.room.Room
 import com.ands.wb5weekweb.api.ApiServiceCats
-import com.ands.wb5weekweb.api.ApiServiceSuperHeroes
-import com.ands.wb5weekweb.repository.DotaCacheStorage
-import com.ands.wb5weekweb.repository.DotaCacheStorageImpl
+
 import com.ands.wb5weekweb.repository.Repository
 import com.ands.wb5weekweb.repository.RepositoryImpl
 import com.ands.wb5weekweb.utils.Constants
@@ -29,15 +27,7 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 class DataModule() {
 
-    @Provides
-    @Singleton
-    fun provideApiService(): ApiServiceSuperHeroes {
-        return Retrofit.Builder()
-            .baseUrl(Constants.SUPER_HEROES_BASE_URL)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-            .create(ApiServiceSuperHeroes::class.java)
-    }
+
 
     @Provides
     @Singleton
@@ -49,25 +39,19 @@ class DataModule() {
             .create(ApiServiceCats::class.java)
     }
 
-    @Provides
-    @Singleton
-    fun provideDotaCacheStorage(): DotaCacheStorage = DotaCacheStorageImpl()
 
     @Provides
     @Singleton
     fun provideRepository(
         @ApplicationContext context: Context,
-        apiServiceSuperHeroes: ApiServiceSuperHeroes,
         apiServiceCats: ApiServiceCats,
         client: HttpClient,
-        dotaCacheStorage: DotaCacheStorage
     ): Repository {
         return RepositoryImpl(
             context = context,
-            apiServiceSuperHeroes = apiServiceSuperHeroes,
             apiServiceCats = apiServiceCats,
             client = client,
-            dotaCacheStorage = dotaCacheStorage
+
         )
     }
 

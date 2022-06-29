@@ -28,7 +28,7 @@ class AboutFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.backBtn.setOnClickListener {
             Navigation.findNavController(binding.root).popBackStack()
-            //requireActivity().onBackPressed()
+
         }
     }
 }

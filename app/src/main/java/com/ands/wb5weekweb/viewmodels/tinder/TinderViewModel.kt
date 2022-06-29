@@ -27,7 +27,6 @@ class TinderViewModel @Inject constructor(
 
     init {
         getNewCat()
-//        getNewCatKtor()
     }
 
     fun createVote(value: Int) = viewModelScope.launch {
@@ -82,21 +81,6 @@ class TinderViewModel @Inject constructor(
             Log.e("VieModel", "exception during request ${e.localizedMessage}")
         }
     }
-
-//    private fun getNewCatKtor() = viewModelScope.launch {
-//
-//        try {
-//            getCatUseCase.getCatKtor().let { catList ->
-//                _currentCat.postValue(catList.first())
-//                cacheCat(catList.first())
-//                currentImageId = catList.first().id
-//                Log.e("KTOR", catList.first().toString())
-//            }
-//        } catch (e: Exception) {
-//            Log.e("Ktor", "Exception during request ktor: ${e.localizedMessage}")
-//            getCachedCat()
-//        }
-//    }
 
     private fun getCachedCat() = viewModelScope.launch {
         _currentCat.postValue(dao.getCatCache())

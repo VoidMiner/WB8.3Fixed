@@ -6,34 +6,10 @@
     app:startDestination="@id/menuFragment">
 
     <fragment
-        android:id="@+id/descriptionFragment"
-        android:name="com.ands.wb5weekweb.fragments.heroes.DescriptionFragment"
-        android:label="fragment_description"
-        tools:layout="@layout/fragment_description" >
-        <argument
-            android:name="commonHeroesStats"
-            app:argType="com.ands.wb5weekweb.model.heroes.CommonHeroesStats" />
-    </fragment>
-    <fragment
-        android:id="@+id/heroesFragment"
-        android:name="com.ands.wb5weekweb.fragments.heroes.DotaHeroesFragment"
-        android:label="fragment_heroes"
-        tools:layout="@layout/fragment_heroes" >
-        <action
-            android:id="@+id/action_heroesFragment_to_descriptionFragment"
-            app:destination="@id/descriptionFragment" />
-    </fragment>
-    <fragment
         android:id="@+id/menuFragment"
         android:name="com.ands.wb5weekweb.fragments.MenuFragment"
         android:label="fragment_menu"
         tools:layout="@layout/fragment_menu" >
-        <action
-            android:id="@+id/action_menuFragment_to_heroesFragment"
-            app:destination="@id/heroesFragment" />
-        <action
-            android:id="@+id/action_menuFragment_to_superHeroesFragment"
-            app:destination="@id/superHeroesFragment" />
         <action
             android:id="@+id/action_menuFragment_to_tinderFragment"
             app:destination="@id/tinderFragment" />
@@ -49,15 +25,6 @@
         <action
             android:id="@+id/action_tinderFragment_to_likedCatsFragment"
             app:destination="@id/likedCatsFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/superHeroesFragment"
-        android:name="com.ands.wb5weekweb.fragments.heroes.SuperHeroesFragment"
-        android:label="fragment_super_heroes"
-        tools:layout="@layout/fragment_super_heroes" >
-        <action
-            android:id="@+id/action_superHeroesFragment_to_descriptionFragment"
-            app:destination="@id/descriptionFragment" />
     </fragment>
     <fragment
         android:id="@+id/likedCatsFragment"
